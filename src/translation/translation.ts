@@ -1,6 +1,5 @@
 export enum Language {
   RU = `Russian`,
-
   ENG = `English`,
 }
 

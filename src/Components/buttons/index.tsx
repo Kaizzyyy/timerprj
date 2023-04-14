@@ -2,15 +2,14 @@ import { FC } from "react";
 import styled from "styled-components";
 
 const StyledButton = styled.button`
-  display: inline-block;
-  border-radius: 3px;
-  padding: 0.5rem 0;
-  margin: 0.5rem 1rem;
-  width: 11rem;
-  background: transparent;
-  color: red;
-  border: 2 black;
-  font-family: inherit;
+  border: none;
+  padding: 12px 24px;
+  text-transform: uppercase;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+
 `;
 
 interface ButtonInterface {

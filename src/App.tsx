@@ -1,11 +1,12 @@
 import { createContext, useState } from "react";
-import { Header } from "./Components/header";
-import { GlobalStyles } from "./GlobalStyles";
+
+import { Header } from "./components/header";
+import { Main } from "./components/main";
+
 import { Language } from "./translation/translation";
-import { Main } from "./Components/main";
+import { GlobalStyles } from "./styles/GlobalStyles";
 
 interface LanguageContextInterface {
-
   language: string;
   changeLanguage?: () => void;
 }
@@ -38,25 +39,14 @@ function App() {
     theme === Theme.Black ? setTheme(Theme.White) : setTheme(Theme.Black);
   };
 
-  //  const { theme, setTheme } = useTheme()
-
-  //  const handleLightThemeClick = () => {
-  //    setTheme('light')
-  //  }
-  //  const handleDarkThemeClick = () => {
-  //    setTheme('dark')
-  //  }
-
   return (
-    <div>
-      <ThemeContext.Provider value={{ theme, changeTheme }}>
-        <GlobalStyles theme={theme} />
-        <LanguageContext.Provider value={{ language, changeLanguage }}>
-          <Header />
-          <Main />
-        </LanguageContext.Provider>
-      </ThemeContext.Provider>
-    </div>
+    <ThemeContext.Provider value={{ theme, changeTheme }}>
+      <GlobalStyles theme={theme} />
+      <LanguageContext.Provider value={{ language, changeLanguage }}>
+        <Header />
+        <Main />
+      </LanguageContext.Provider>
+    </ThemeContext.Provider>
   );
 }
 
